@@ -296,7 +296,7 @@ input::placeholder {
 
 @media screen and (max-width:500px) {
   .body {
-      background: url("/images/mobilewallpaper.jpg") no-repeat center;
+      background: url("../public/mobilewallpaper.jpg") no-repeat center;
       background-size: 160%;
   }
 
