@@ -82,7 +82,7 @@ function App() {
       >
         <div className="search">
           <div className="enter">
-            <img id="loc" src="../public/location.png" alt="loc" />
+            <img id="loc" src="./public/location.png" alt="loc" />
             <input
               type="text"
               className="input-box"
