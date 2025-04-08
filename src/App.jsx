@@ -19,7 +19,7 @@ function App() {
       const data = await response.json();
 
       if (data.cod === "404") {
-        const audio = new Audio("../public/error.mp3"); // 👈 load audio
+        const audio = new Audio("/public/error.mp3"); // 👈 load audio
         audio.play();
         if (navigator.vibrate) {
           navigator.vibrate([300, 100, 300]);
