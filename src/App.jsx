@@ -8,7 +8,8 @@ function App() {
   const [animate, setAnimate] = useState(false);
   const [errorAnimate, seterrorAnimate] = useState(false);
 
-  const apiKey = "";
+  const apiKey = import.meta.env.VITE_API_KEY;
+
 
   const handleSearch = async () => {
     if (!city) return;
@@ -19,11 +20,13 @@ function App() {
       const data = await response.json();
 
       if (data.cod === "404") {
-        const audio = new Audio("/error.mp3"); // 👈 load audio
+        const audio = new Audio("/error.mp3"); 
         audio.play();
+
         if (navigator.vibrate) {
           navigator.vibrate([300, 100, 300]);
         }
+
         setWeatherData(null);
         setNotFound(true);
         setAnimate(false);
@@ -37,17 +40,20 @@ function App() {
       }
     } catch (err) {
       console.error("Error fetching weather:", err);
-      const audio = new Audio("/error.mp3"); // 👈 load audio
+      const audio = new Audio("/error.mp3"); 
       audio.play();
+
       if (navigator.vibrate) {
         navigator.vibrate([300, 100, 300]);
       }
+
       setNotFound(true);
       setAnimate(false);
       seterrorAnimate(false);
       setTimeout(() => seterrorAnimate(true), 10);
     }
   };
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       handleSearch();
