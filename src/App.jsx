@@ -10,6 +10,7 @@ function App() {
 
   const apiKey = import.meta.env.VITE_API_KEY;
 
+
   const handleSearch = async () => {
     if (!city) return;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
@@ -19,7 +20,7 @@ function App() {
       const data = await response.json();
 
       if (data.cod === "404") {
-        const audio = new Audio("/error.mp3"); // ✅ FIXED
+        const audio = new Audio("/error.mp3"); 
         audio.play();
 
         if (navigator.vibrate) {
@@ -39,7 +40,7 @@ function App() {
       }
     } catch (err) {
       console.error("Error fetching weather:", err);
-      const audio = new Audio("/error.mp3"); // ✅ FIXED
+      const audio = new Audio("/error.mp3"); 
       audio.play();
 
       if (navigator.vibrate) {
