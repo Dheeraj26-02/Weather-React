@@ -8,7 +8,7 @@ function App() {
   const [animate, setAnimate] = useState(false);
   const [errorAnimate, seterrorAnimate] = useState(false);
 
-  const apiKey = "881219e19f0cb2e5c87c7f256d444129";
+  const apiKey = "";
 
   const handleSearch = async () => {
     if (!city) return;
